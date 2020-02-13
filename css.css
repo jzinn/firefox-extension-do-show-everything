@@ -1,0 +1,20 @@
+html,
+body {
+	display: block !important;
+}
+
+*,
+::before,
+::after {
+	animation: initial !important;
+	contain: initial !important;
+	height: initial !important;
+	max-height: initial !important;
+	min-height: initial !important;
+	opacity: initial !important;
+	overflow: initial !important;
+	position: initial !important;
+	transform: initial !important;
+	transition: initial !important;
+	visibility: initial !important;
+}
