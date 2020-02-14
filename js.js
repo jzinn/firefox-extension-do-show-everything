@@ -28,10 +28,10 @@ function position(node, computed) {
 
 function display(node, computed) {
   var value;
-  if (computed.getPropertyValue("display") !== "none") return;
-  value = natural(node.nodeName);
-  if (!value) return;
-  node.classList.add("showeverything-display-" + value);
+  if (computed.getPropertyValue("display") === "none") {
+    value = natural(node.nodeName);
+    if (value) node.classList.add("showeverything-display-" + value);
+  }
 }
 
 function margin(node, computed, suffix) {
