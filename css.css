@@ -1,8 +1,3 @@
-html,
-body {
-  display: block !important;
-}
-
 *,
 ::before,
 ::after {
@@ -18,6 +13,11 @@ body {
   transform: initial !important;
   transition: initial !important;
   visibility: initial !important;
+}
+
+html,
+body {
+  display: block !important;
 }
 
 /* display */
