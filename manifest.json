@@ -10,7 +10,14 @@
     {
       "js": ["js.js"],
       "css": ["css.css"],
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "exclude_matches": [
+        "*://*.amazon.com/*",
+        "*://*.google.com/*",
+        "*://app.slack.com/*",
+        "*://www.yelp.com/*",
+        "*://www.youtube.com/*"
+      ]
     }
   ]
 }
