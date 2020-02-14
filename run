@@ -1,0 +1,2 @@
+#!/bin/sh
+PATH=node_modules/.bin:"$PATH" exec "$@"

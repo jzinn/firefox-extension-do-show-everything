@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+
+prettier --write '{css.css,js.js,manifest.json}'

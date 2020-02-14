@@ -3,40 +3,51 @@
 process(document.documentElement);
 
 function process(node) {
+  var computed;
+
   if (node.nodeType !== 1) return;
-  process_(node.nodeName, node.style, window.getComputedStyle(node));
+
+  computed = window.getComputedStyle(node);
+  position(node, computed);
+  display(node, computed);
+  margin(node, computed, "");
+
+  computed = window.getComputedStyle(node, "::before");
+  margin(node, computed, "-before");
+
+  computed = window.getComputedStyle(node, "::after");
+  margin(node, computed, "-after");
+
   node.childNodes.forEach(process);
 }
 
-function process_(name, inline, computed) {
-  unstyle(name, inline, computed, "display", none, redisplay);
-
-  unstyle(name, inline, computed, "margin-top", negative, initialize);
-  unstyle(name, inline, computed, "margin-right", negative, initialize);
-  unstyle(name, inline, computed, "margin-bottom", negative, initialize);
-  unstyle(name, inline, computed, "margin-left", negative, initialize);
+function position(node, computed) {
+  if (computed.getPropertyValue("position") !== "static")
+    node.style.setProperty("position", "initial", "important");
 }
 
-function unstyle(name, inline, computed, property, predicate, override) {
+function display(node, computed) {
+  var value;
+  if (computed.getPropertyValue("display") !== "none") return;
+  value = natural(node.nodeName);
+  if (!value) return;
+  node.classList.add("showeverything-display-" + value);
+}
+
+function margin(node, computed, suffix) {
+  mark(node, computed, "margin-top", negative, suffix);
+  mark(node, computed, "margin-right", negative, suffix);
+  mark(node, computed, "margin-bottom", negative, suffix);
+  mark(node, computed, "margin-left", negative, suffix);
+}
+
+function mark(node, computed, property, predicate, suffix) {
   if (predicate(computed.getPropertyValue(property)))
-    override(inline, property, name);
-}
-
-function none(value) {
-  return value === "none";
+    node.classList.add("showeverything-" + property + suffix);
 }
 
 function negative(value) {
   return value.charAt(0) === "-";
-}
-
-function redisplay(inline, property, name) {
-  var value = natural(name);
-  if (value) inline.setProperty(property, value, "important");
-}
-
-function initialize(inline, property, name) {
-  inline.setProperty(property, "initial", "important");
 }
 
 // From view-source:resource://gre-resources/html.css
