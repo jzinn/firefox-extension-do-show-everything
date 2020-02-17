@@ -11,6 +11,7 @@ function process(node) {
   position(node, computed);
   display(node, computed);
   margin(node, computed, "");
+  details(node, computed);
 
   computed = window.getComputedStyle(node, "::before");
   margin(node, computed, "-before");
@@ -39,6 +40,10 @@ function margin(node, computed, suffix) {
   mark(node, computed, "margin-right", negative, suffix);
   mark(node, computed, "margin-bottom", negative, suffix);
   mark(node, computed, "margin-left", negative, suffix);
+}
+
+function details(node, computed) {
+  if (node.nodeName === "DETAILS") node.open = true;
 }
 
 function mark(node, computed, property, predicate, suffix) {
