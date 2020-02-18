@@ -9,7 +9,6 @@ function process(node) {
 
   computed = window.getComputedStyle(node);
   position(node, computed);
-  display(node, computed);
   margin(node, computed, "");
   details(node, computed);
 
@@ -25,14 +24,6 @@ function process(node) {
 function position(node, computed) {
   if (computed.getPropertyValue("position") !== "static")
     node.style.setProperty("position", "initial", "important");
-}
-
-function display(node, computed) {
-  var value;
-  if (computed.getPropertyValue("display") === "none") {
-    value = natural(node.nodeName);
-    if (value) node.classList.add("showeverything-display-" + value);
-  }
 }
 
 function margin(node, computed, suffix) {
@@ -53,62 +44,4 @@ function mark(node, computed, property, predicate, suffix) {
 
 function negative(value) {
   return value.charAt(0) === "-";
-}
-
-// From view-source:resource://gre-resources/html.css
-function natural(name) {
-  return {
-    ADDRESS: "block",
-    ARTICLE: "block",
-    ASIDE: "block",
-    BLOCKQUOTE: "block",
-    BODY: "block",
-    CAPTION: "table-caption",
-    CENTER: "block",
-    COL: "table-column",
-    COLGROUP: "table-column-group",
-    DD: "block",
-    DETAILS: "block",
-    DIR: "block",
-    DIV: "block",
-    DL: "block",
-    DT: "block",
-    FIGCAPTION: "block",
-    FIGURE: "block",
-    FOOTER: "block",
-    FORM: "block",
-    FRAMESET: "block",
-    H1: "block",
-    H2: "block",
-    H3: "block",
-    H4: "block",
-    H5: "block",
-    H6: "block",
-    HEADER: "block",
-    HGROUP: "block",
-    HR: "block",
-    HTML: "block",
-    LI: "list-item",
-    LISTING: "block",
-    MAIN: "block",
-    MARQUEE: "inline-block",
-    MENU: "block",
-    MULTICOL: "block",
-    NAV: "block",
-    OL: "block",
-    P: "block",
-    PLAINTEXT: "block",
-    PRE: "block",
-    SECTION: "block",
-    SUMMARY: "block",
-    TABLE: "table",
-    TBODY: "table-row-group",
-    TD: "table-cell",
-    TFOOT: "table-footer-group",
-    TH: "table-cell",
-    THEAD: "table-header-group",
-    TR: "table-row",
-    UL: "block",
-    XMP: "block"
-  }[name];
 }

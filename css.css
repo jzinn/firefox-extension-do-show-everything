@@ -20,58 +20,6 @@ body {
   display: block !important;
 }
 
-/* display */
-
-.showeverything-display-block {
-  display: block !important;
-}
-
-.showeverything-display-inline-block {
-  display: inline-block !important;
-}
-
-.showeverything-display-list-item {
-  display: list-item !important;
-}
-
-.showeverything-display-table {
-  display: table !important;
-}
-
-.showeverything-display-table-caption {
-  display: table-caption !important;
-}
-
-.showeverything-display-table-cell {
-  display: table-cell !important;
-}
-
-.showeverything-display-table-column {
-  display: table-column !important;
-}
-
-.showeverything-display-table-column-group {
-  display: table-column-group !important;
-}
-
-.showeverything-display-table-footer-group {
-  display: table-footer-group !important;
-}
-
-.showeverything-display-table-header-group {
-  display: table-header-group !important;
-}
-
-.showeverything-display-table-row {
-  display: table-row !important;
-}
-
-.showeverything-display-table-row-group {
-  display: table-row-group !important;
-}
-
-/* margin */
-
 .showeverything-margin-top,
 .showeverything-margin-top-before::before,
 .showeverything-margin-top-after::after {
