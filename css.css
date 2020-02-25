@@ -15,11 +15,6 @@
   visibility: initial !important;
 }
 
-html,
-body {
-  display: block !important;
-}
-
 /* display */
 
 .showeverything-display-block {
