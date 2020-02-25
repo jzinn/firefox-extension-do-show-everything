@@ -15,6 +15,14 @@
   visibility: initial !important;
 }
 
+/* width */
+
+.showeverything-width {
+  width: initial !important;
+  max-width: initial !important;
+  min-width: initial !important;
+}
+
 /* display */
 
 .showeverything-display-block {

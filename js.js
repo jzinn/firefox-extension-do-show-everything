@@ -11,6 +11,7 @@ function process(node) {
   position(node, computed);
   display(node, computed);
   margin(node, computed, "");
+  width(node, computed);
   details(node, computed);
 
   computed = window.getComputedStyle(node, "::before");
@@ -40,6 +41,11 @@ function margin(node, computed, suffix) {
   mark(node, computed, "margin-right", negative, suffix);
   mark(node, computed, "margin-bottom", negative, suffix);
   mark(node, computed, "margin-left", negative, suffix);
+}
+
+function width(node, computed) {
+  if (computed.width === "0px")
+    node.classList.add("showeverything-width");
 }
 
 function details(node, computed) {
