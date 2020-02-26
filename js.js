@@ -44,7 +44,7 @@ function margin(node, computed, suffix) {
 }
 
 function width(node, computed) {
-  if (computed.width === "0px")
+  if (computed.width === "0px" || computed.width === "1px")
     node.classList.add("showeverything-width");
 }
 
