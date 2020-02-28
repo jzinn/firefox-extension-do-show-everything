@@ -11,6 +11,7 @@ function process(node) {
   position(node, computed);
   display(node, computed);
   margin(node, computed, "");
+  height(node, computed);
   width(node, computed);
   details(node, computed);
 
@@ -41,6 +42,14 @@ function margin(node, computed, suffix) {
   mark(node, computed, "margin-right", negative, suffix);
   mark(node, computed, "margin-bottom", negative, suffix);
   mark(node, computed, "margin-left", negative, suffix);
+}
+
+function height(node, computed) {
+  if (node.scrollHeight !== node.clientHeight) {
+    node.style.setProperty("height", "initial", "important");
+    node.style.setProperty("max-height", "initial", "important");
+    node.style.setProperty("min-height", "initial", "important");
+  }
 }
 
 function width(node, computed) {
