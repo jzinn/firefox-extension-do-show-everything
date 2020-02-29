@@ -53,7 +53,12 @@ function height(node, computed) {
 }
 
 function width(node, computed) {
-  if (node.scrollWidth !== node.clientWidth)
+  var width = computed.width;
+  if (
+    width === "0px" ||
+    width === "1px" ||
+    node.scrollWidth !== node.clientWidth
+  )
     node.classList.add("showeverything-width");
 }
 
