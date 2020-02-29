@@ -54,11 +54,7 @@ function height(node, computed) {
 
 function width(node, computed) {
   var width = computed.width;
-  if (
-    width === "0px" ||
-    width === "1px" ||
-    node.scrollWidth !== node.clientWidth
-  )
+  if (width === "0px" || width === "1px")
     node.classList.add("showeverything-width");
 }
 
