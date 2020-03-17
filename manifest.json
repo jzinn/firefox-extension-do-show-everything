@@ -15,6 +15,9 @@
         "*://*.amazon.com/*",
         "*://*.google.com/*",
         "*://app.slack.com/*",
+        "*://github.com/*",
+        "*://www.macrumors.com/*",
+        "*://www.techmeme.com/*",
         "*://www.yelp.com/*",
         "*://www.youtube.com/*"
       ]
