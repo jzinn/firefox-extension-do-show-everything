@@ -16,6 +16,7 @@
         "*://*.google.com/*",
         "*://app.slack.com/*",
         "*://github.com/*",
+        "*://slashdot.org/*",
         "*://twitter.com/*",
         "*://www.macrumors.com/*",
         "*://www.techmeme.com/*",
