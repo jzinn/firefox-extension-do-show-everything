@@ -125,6 +125,6 @@ function natural(name) {
     THEAD: "table-header-group",
     TR: "table-row",
     UL: "block",
-    XMP: "block"
+    XMP: "block",
   }[name];
 }
