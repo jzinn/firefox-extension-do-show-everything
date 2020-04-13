@@ -17,6 +17,7 @@
         "*://app.slack.com/*",
         "*://github.com/*",
         "*://gitlab.com/*",
+        "*://news.ycombinator.com/*",
         "*://slashdot.org/*",
         "*://twitter.com/*",
         "*://www.macrumors.com/*",
