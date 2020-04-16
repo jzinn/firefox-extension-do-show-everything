@@ -16,6 +16,12 @@
   visibility: initial !important;
 }
 
+.showeverything-clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* width */
 
 .showeverything-width {

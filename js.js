@@ -14,6 +14,7 @@ function process(node) {
   height(node, computed);
   width(node, computed);
   details(node, computed);
+  float(node, computed);
 
   computed = window.getComputedStyle(node, "::before");
   margin(node, computed, "-before");
@@ -60,6 +61,13 @@ function width(node, computed) {
 
 function details(node, computed) {
   if (node.nodeName === "DETAILS") node.open = true;
+}
+
+function float(node, computed) {
+  if (computed.getPropertyValue("float") !== "none") {
+    if (node.parentNode)
+      node.parentNode.classList.add("showeverything-clearfix");
+  }
 }
 
 function mark(node, computed, property, predicate, suffix) {
