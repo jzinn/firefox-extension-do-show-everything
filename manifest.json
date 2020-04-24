@@ -11,6 +11,9 @@
       "js": ["js.js"],
       "css": ["css.css"],
       "matches": ["<all_urls>"],
+      "exclude_globs": [
+        "*://gitlab.*/*"
+      ],
       "exclude_matches": [
         "*://*.amazon.com/*",
         "*://*.google.com/*",
