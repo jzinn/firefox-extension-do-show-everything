@@ -1,6 +1,7 @@
 "use strict";
 
-process(document.documentElement);
+if (document.getElementsByTagName("*").length <= 7500)
+  process(document.documentElement);
 
 function process(node) {
   var computed;
