@@ -19,6 +19,7 @@
         "*://github.com/*",
         "*://gitlab.com/*",
         "*://news.ycombinator.com/*",
+        "*://salsa.debian.org/*",
         "*://slashdot.org/*",
         "*://twitter.com/*",
         "*://www.linuxfromscratch.org/*",
