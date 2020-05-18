@@ -11,6 +11,7 @@ function process(node) {
   computed = window.getComputedStyle(node);
   position(node, computed);
   display(node, computed);
+  visibility(node, computed);
   margin(node, computed, "");
   height(node, computed);
   width(node, computed);
@@ -37,6 +38,11 @@ function display(node, computed) {
     value = natural(node.nodeName);
     if (value) node.classList.add("showeverything-display-" + value);
   }
+}
+
+function visibility(node, computed) {
+  if (computed.getPropertyValue("visibility") !== "visible")
+    node.style.setProperty("visibility", "initial", "important");
 }
 
 function margin(node, computed, suffix) {
