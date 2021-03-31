@@ -15,6 +15,7 @@
   transform: initial !important;
   transition: initial !important;
   visibility: initial !important;
+  z-index: initial !important;
 }
 
 .showeverything-clearfix::after {
