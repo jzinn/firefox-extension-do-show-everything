@@ -17,6 +17,7 @@ function process(node) {
   width(node, computed);
   details(node, computed);
   float(node, computed);
+  flex(node, computed);
 
   computed = window.getComputedStyle(node, "::before");
   margin(node, computed, "-before");
@@ -75,6 +76,12 @@ function float(node, computed) {
     if (node.parentNode)
       node.parentNode.classList.add("showeverything-clearfix");
   }
+}
+
+function flex(node, computed) {
+  // https://www.latimes.com/opinion/story/2021-05-06/editorial-there-is-no-drought
+  if (computed.getPropertyValue("flex-direction") === "column")
+    node.style.setProperty("display", "initial", "important");
 }
 
 function mark(node, computed, property, predicate, suffix) {
